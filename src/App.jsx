@@ -253,16 +253,19 @@ function Home({ setPage }) {
             title="Productivité"
             text="Gain moyen sur les tâches automatisées."
           />
+
           <StatCard
             value="-28%"
             title="Coûts"
             text="Réduction des tâches répétitives."
           />
+
           <StatCard
             value="+52%"
             title="Précision"
             text="Amélioration du traitement des informations."
           />
+
           <StatCard
             value="+90%"
             title="Satisfaction"
@@ -937,10 +940,21 @@ function Performance() {
             </div>
 
             <div className="legend">
-              <span>Analyse prédictive <b>35%</b></span>
-              <span>Automatisation <b>30%</b></span>
-              <span>IA conversationnelle <b>20%</b></span>
-              <span>Vision <b>15%</b></span>
+              <span>
+                Analyse prédictive <b>35%</b>
+              </span>
+
+              <span>
+                Automatisation <b>30%</b>
+              </span>
+
+              <span>
+                IA conversationnelle <b>20%</b>
+              </span>
+
+              <span>
+                Vision <b>15%</b>
+              </span>
             </div>
           </div>
         </div>
@@ -963,10 +977,14 @@ function Performance() {
             ["Image Recognition", "Vision", "94.1%"],
             ["Chatbot Support", "NLP", "89.3%"],
           ].map((item) => (
-            <div className="activity-row" key={item[0]}>
+            <div
+              className="activity-row"
+              key={item[0]}
+            >
               <span>{item[0]}</span>
               <span>{item[1]}</span>
               <span>{item[2]}</span>
+
               <span className="active-status">
                 Actif
               </span>
@@ -1024,7 +1042,9 @@ function About() {
       <section className="about-grid section">
         <div className="about-card">
           <span>01</span>
+
           <h2>Notre mission</h2>
+
           <p>
             Créer des solutions d'intelligence artificielle
             réellement utiles au quotidien.
@@ -1033,7 +1053,9 @@ function About() {
 
         <div className="about-card">
           <span>02</span>
+
           <h2>Notre vision</h2>
+
           <p>
             Faire de l'IA un outil simple, accessible et
             performant pour toutes les entreprises.
@@ -1042,7 +1064,9 @@ function About() {
 
         <div className="about-card">
           <span>03</span>
+
           <h2>Notre approche</h2>
+
           <p>
             Partir des besoins réels avant de choisir
             la technologie.
@@ -1140,11 +1164,26 @@ function Contact() {
             <option value="" disabled>
               Quel est votre besoin ?
             </option>
-            <option>Gestion des e-mails</option>
-            <option>Automatisation</option>
-            <option>Analyse de données</option>
-            <option>Solution IA personnalisée</option>
-            <option>Je ne sais pas encore</option>
+
+            <option>
+              Gestion des e-mails
+            </option>
+
+            <option>
+              Automatisation
+            </option>
+
+            <option>
+              Analyse de données
+            </option>
+
+            <option>
+              Solution IA personnalisée
+            </option>
+
+            <option>
+              Je ne sais pas encore
+            </option>
           </select>
 
           <textarea
@@ -1170,17 +1209,23 @@ function Contact() {
       <div className="contact-bottom">
         <div>
           <span>EMAIL</span>
-          <strong>contact@aifuture.com</strong>
+          <strong>
+            contact@aifuture.com
+          </strong>
         </div>
 
         <div>
           <span>TÉLÉPHONE</span>
-          <strong>+33 1 23 45 67 89</strong>
+          <strong>
+            +33 1 23 45 67 89
+          </strong>
         </div>
 
         <div>
           <span>HORAIRES</span>
-          <strong>Lun - Ven · 9h00 - 18h00</strong>
+          <strong>
+            Lun - Ven · 9h00 - 18h00
+          </strong>
         </div>
       </div>
     </div>
@@ -1262,7 +1307,9 @@ function App() {
           <Services setPage={setPage} />
         )}
 
-        {page === "ia" && <Mailora />}
+        {page === "ia" && (
+          <Mailora />
+        )}
 
         {page === "solutions" && (
           <Solutions setPage={setPage} />
@@ -1272,9 +1319,13 @@ function App() {
           <Performance />
         )}
 
-        {page === "about" && <About />}
+        {page === "about" && (
+          <About />
+        )}
 
-        {page === "contact" && <Contact />}
+        {page === "contact" && (
+          <Contact />
+        )}
       </main>
 
       <Footer setPage={setPage} />
