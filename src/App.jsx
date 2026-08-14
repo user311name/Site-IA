@@ -1,11 +1,19 @@
 import { useState } from "react";
 import "./index.css";
 
+/* =========================
+   IMAGES
+========================= */
+
 const images = {
   brain: "/images/ai-brain.png",
-  head: "/images/ai-head.png",
   analytics: "/images/ai-analytics.png",
+  head: "/images/ia-head.png",
 };
+
+/* =========================
+   MAILS
+========================= */
 
 const mails = [
   {
@@ -50,6 +58,10 @@ const mails = [
   },
 ];
 
+/* =========================
+   SERVICES
+========================= */
+
 const services = [
   {
     icon: "✦",
@@ -83,6 +95,10 @@ const services = [
   },
 ];
 
+/* =========================
+   LOGO
+========================= */
+
 function Logo() {
   return (
     <div className="logo">
@@ -91,6 +107,10 @@ function Logo() {
     </div>
   );
 }
+
+/* =========================
+   NAVBAR
+========================= */
 
 function Navbar({ page, setPage }) {
   const [open, setOpen] = useState(false);
@@ -107,7 +127,11 @@ function Navbar({ page, setPage }) {
   function navigate(target) {
     setPage(target);
     setOpen(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   }
 
   return (
@@ -118,7 +142,11 @@ function Navbar({ page, setPage }) {
         {links.map(([label, target]) => (
           <button
             key={target}
-            className={page === target ? "nav-link active" : "nav-link"}
+            className={
+              page === target
+                ? "nav-link active"
+                : "nav-link"
+            }
             onClick={() => navigate(target)}
           >
             {label}
@@ -143,6 +171,10 @@ function Navbar({ page, setPage }) {
   );
 }
 
+/* =========================
+   COMMON
+========================= */
+
 function Eyebrow({ children }) {
   return <div className="eyebrow">{children}</div>;
 }
@@ -151,8 +183,11 @@ function SectionTitle({ eyebrow, title, text }) {
   return (
     <div className="section-title">
       <Eyebrow>{eyebrow}</Eyebrow>
+
       <h2>{title}</h2>
+
       {text && <p>{text}</p>}
+
       <div className="title-line" />
     </div>
   );
@@ -167,7 +202,9 @@ function Home({ setPage }) {
     <>
       <section className="hero">
         <div className="hero-content">
-          <Eyebrow>INTELLIGENCE ARTIFICIELLE POUR ENTREPRISES</Eyebrow>
+          <Eyebrow>
+            INTELLIGENCE ARTIFICIELLE POUR ENTREPRISES
+          </Eyebrow>
 
           <h1>
             L'intelligence artificielle
@@ -177,9 +214,9 @@ function Home({ setPage }) {
           </h1>
 
           <p className="hero-text">
-            Nous créons des solutions d'intelligence artificielle capables
-            d'automatiser vos tâches, d'analyser vos données et de simplifier
-            votre quotidien.
+            Nous créons des solutions d'intelligence artificielle
+            capables d'automatiser vos tâches, d'analyser vos données
+            et de simplifier votre quotidien.
           </p>
 
           <div className="hero-buttons">
@@ -229,7 +266,9 @@ function Home({ setPage }) {
       </section>
 
       <section className="trusted">
-        <p>UNE TECHNOLOGIE AU SERVICE DE VOTRE ENTREPRISE</p>
+        <p>
+          UNE TECHNOLOGIE AU SERVICE DE VOTRE ENTREPRISE
+        </p>
 
         <div className="trusted-logos">
           <span>GOOGLE</span>
@@ -323,7 +362,9 @@ function Home({ setPage }) {
 
       <section className="cta">
         <div>
-          <Eyebrow>PRÊT À PASSER À L'ÉTAPE SUIVANTE ?</Eyebrow>
+          <Eyebrow>
+            PRÊT À PASSER À L'ÉTAPE SUIVANTE ?
+          </Eyebrow>
 
           <h2>
             Et si votre entreprise
@@ -332,8 +373,8 @@ function Home({ setPage }) {
           </h2>
 
           <p>
-            Parlons de vos besoins et trouvons ensemble les solutions
-            les plus pertinentes.
+            Parlons de vos besoins et trouvons ensemble les
+            solutions les plus pertinentes.
           </p>
         </div>
 
@@ -352,6 +393,7 @@ function StatCard({ value, title, text }) {
   return (
     <div className="stat-card">
       <strong>{value}</strong>
+
       <h3>{title}</h3>
 
       <div className="chart-line">
@@ -372,7 +414,9 @@ function StatCard({ value, title, text }) {
 function ServiceCard({ service }) {
   return (
     <div className="service-card">
-      <div className="service-icon">{service.icon}</div>
+      <div className="service-icon">
+        {service.icon}
+      </div>
 
       <h3>{service.title}</h3>
 
@@ -411,7 +455,10 @@ function Services({ setPage }) {
       <section className="section">
         <div className="large-services">
           {services.map((service, index) => (
-            <div className="large-service" key={service.title}>
+            <div
+              className="large-service"
+              key={service.title}
+            >
               <span className="number">
                 0{index + 1}
               </span>
@@ -487,7 +534,9 @@ function Mailora() {
     <div className="page mailora-page">
       <section className="mailora-hero">
         <div>
-          <Eyebrow>NOTRE INTELLIGENCE ARTIFICIELLE</Eyebrow>
+          <Eyebrow>
+            NOTRE INTELLIGENCE ARTIFICIELLE
+          </Eyebrow>
 
           <h1>
             Voici <span>MAILORA.</span>
@@ -521,7 +570,10 @@ function Mailora() {
         <div className="demo-header">
           <div>
             <Eyebrow>DÉMONSTRATION</Eyebrow>
-            <h2>Votre boîte mail, augmentée par l'IA.</h2>
+
+            <h2>
+              Votre boîte mail, augmentée par l'IA.
+            </h2>
           </div>
 
           <span className="online">
@@ -618,7 +670,9 @@ function Mailora() {
 
           <div className="mail-analysis">
             <div className="analysis-header">
-              <div className="ai-avatar">✦</div>
+              <div className="ai-avatar">
+                ✦
+              </div>
 
               <div>
                 <small>ANALYSE PAR</small>
@@ -766,7 +820,9 @@ function Solutions({ setPage }) {
     <div className="page">
       <section className="solutions-hero">
         <div>
-          <Eyebrow>SOLUTIONS POUR ENTREPRISES</Eyebrow>
+          <Eyebrow>
+            SOLUTIONS POUR ENTREPRISES
+          </Eyebrow>
 
           <h1>
             L'IA doit résoudre
@@ -792,6 +848,12 @@ function Solutions({ setPage }) {
           <img
             src={images.head}
             alt="Solution IA"
+            onError={(e) => {
+              console.error(
+                "Image introuvable :",
+                images.head
+              );
+            }}
           />
         </div>
       </section>
@@ -852,13 +914,26 @@ function SolutionCard({ number, title, text }) {
 
 function Performance() {
   const bars = [
-    42, 55, 48, 72, 61, 80, 66, 87, 72, 94, 81, 96,
+    42,
+    55,
+    48,
+    72,
+    61,
+    80,
+    66,
+    87,
+    72,
+    94,
+    81,
+    96,
   ];
 
   return (
     <div className="page">
       <section className="page-hero">
-        <Eyebrow>PERFORMANCE & ANALYTICS</Eyebrow>
+        <Eyebrow>
+          PERFORMANCE & ANALYTICS
+        </Eyebrow>
 
         <h1>
           Mesurez.
@@ -972,10 +1047,26 @@ function Performance() {
           </div>
 
           {[
-            ["Email Prediction", "Predictif", "93.6%"],
-            ["Sales Forecasting", "Predictif", "91.2%"],
-            ["Image Recognition", "Vision", "94.1%"],
-            ["Chatbot Support", "NLP", "89.3%"],
+            [
+              "Email Prediction",
+              "Predictif",
+              "93.6%",
+            ],
+            [
+              "Sales Forecasting",
+              "Predictif",
+              "91.2%",
+            ],
+            [
+              "Image Recognition",
+              "Vision",
+              "94.1%",
+            ],
+            [
+              "Chatbot Support",
+              "NLP",
+              "89.3%",
+            ],
           ].map((item) => (
             <div
               className="activity-row"
@@ -1035,6 +1126,12 @@ function About() {
           <img
             src={images.head}
             alt="AI Future"
+            onError={(e) => {
+              console.error(
+                "Image introuvable :",
+                images.head
+              );
+            }}
           />
         </div>
       </section>
@@ -1110,7 +1207,9 @@ function Contact() {
     <div className="page">
       <section className="contact">
         <div className="contact-copy">
-          <Eyebrow>PARLONS DE VOTRE PROJET</Eyebrow>
+          <Eyebrow>
+            PARLONS DE VOTRE PROJET
+          </Eyebrow>
 
           <h1>
             Et si votre prochaine
@@ -1127,10 +1226,21 @@ function Contact() {
           </p>
 
           <div className="contact-points">
-            <span>✓ Premier échange sans engagement</span>
-            <span>✓ Analyse de vos besoins</span>
-            <span>✓ Recommandations concrètes</span>
-            <span>✓ Solution adaptée à votre entreprise</span>
+            <span>
+              ✓ Premier échange sans engagement
+            </span>
+
+            <span>
+              ✓ Analyse de vos besoins
+            </span>
+
+            <span>
+              ✓ Recommandations concrètes
+            </span>
+
+            <span>
+              ✓ Solution adaptée à votre entreprise
+            </span>
           </div>
         </div>
 
@@ -1267,7 +1377,9 @@ function Footer({ setPage }) {
             Solutions
           </button>
 
-          <button onClick={() => setPage("performance")}>
+          <button
+            onClick={() => setPage("performance")}
+          >
             Performance
           </button>
 
@@ -1307,9 +1419,7 @@ function App() {
           <Services setPage={setPage} />
         )}
 
-        {page === "ia" && (
-          <Mailora />
-        )}
+        {page === "ia" && <Mailora />}
 
         {page === "solutions" && (
           <Solutions setPage={setPage} />
@@ -1319,13 +1429,9 @@ function App() {
           <Performance />
         )}
 
-        {page === "about" && (
-          <About />
-        )}
+        {page === "about" && <About />}
 
-        {page === "contact" && (
-          <Contact />
-        )}
+        {page === "contact" && <Contact />}
       </main>
 
       <Footer setPage={setPage} />
